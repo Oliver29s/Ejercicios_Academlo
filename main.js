@@ -124,3 +124,43 @@ function findUser(users, name) {
 }
 //  ejercicio 13 replit
 
+let aplicacion = [
+  { name: 'Erik', email: 'erik@academlo.com', channel: 'youtube', application: null },
+  { name: 'Georg', email: 'georg@gmail.com', channel: 'facebook', application: { country: 'Mexico', state: 'Nuevo León' }},
+  { name: 'Daniela', email: 'daniela@gmail.com', channel: 'youtube', application: { country: 'Colombia', state: 'Bogotá' }}
+];
+
+function getApplications(users) {
+  let aplicacion1 = []
+  for(i = 0; i < users.length; i++){
+    if(users[i].application !== null && users[i].application !== undefined  ){
+      aplicacion1.push(users[i])
+    }
+  } return aplicacion1
+}
+
+// ejercicio 14 replit
+function sumEvens(start, end) {
+  let suma = 0
+  for(let i = start; i < end ; i++){
+    
+    if(i % 2 == 0){
+     
+      suma += i
+      
+    }
+  } return suma - start
+}
+
+// ejercicio 15 replit
+
+function getMultiples(number, limit) {
+  let multipliDe20 = []
+  for(let i = number; i < limit; i++){
+    if(i % 2 == 0){
+      multipliDe20.push(i)
+    }
+  } return multipliDe20
+}
+
+console.log(getMultiples(5,10));
