@@ -157,10 +157,16 @@ function sumEvens(start, end) {
 function getMultiples(number, limit) {
   let multipliDe20 = []
   for(let i = number; i < limit; i++){
-    if(i % 2 == 0){
+    if(i % number == 0){
       multipliDe20.push(i)
+      
     }
-  } return multipliDe20
+    
+  } multipliDe20.shift()
+  return multipliDe20
 }
 
-console.log(getMultiples(5,10));
+console.log(getMultiples(20,100));
+
+// ejercicio 16 de replit
+
