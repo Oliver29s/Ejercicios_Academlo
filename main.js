@@ -69,7 +69,23 @@
 
 console.log(mergeData(array11, array22));
 // ejercicico 9 replit
+let studentsByScore = [
+  { name: 'Georg', email: 'georg@academlo.com', score: 100 },
+  { name: 'Andrea', email: 'andrea@gmail.com', score: 70 },
+  { name: 'Andrés', email: 'andres@gmail.com', score: 34 }
+]
 
+function orderStudentsByScore(students) {
+  return students.sort((a,b) => a.score - b.score)
+}
+
+
+
+
+
+
+
+// ejercicio 10 Replit
 let array111 = [
   { name: 'Georg', email: 'georg@academlo.com', country_id: 1 },
   { name: 'Andrea', email: 'andrea@gmail.com', country_id: 2 },
@@ -96,44 +112,37 @@ function countStudents(students, countries, countryName) {
   }return acumulado
 }
 
-console.log(countStudents(array111, array222, "Colombia"));
 
-
-// ejercicio 10 Replit
-let estuPAis = [
-  { name: 'Georg', email: 'georg@academlo.com', country_id: 1 },
-  { name: 'Andrea', email: 'andrea@gmail.com', country_id: 2 },
-  { name: 'Daniela', email: 'daniela@gmail.com', country_id: 2 },
-  { name: 'Mónica', email: 'monica@gmail.com', country_id: 2 }
-]
-
-let pais = [
-  { id: 1, name: 'Mexico', },
-  { id: 2, name: 'Colombia' }
-]
-
-function countStudents(students, countries, countryName) {
-  let id = []
-  for (i in students) {
-    id.push(students[i].country_id)
-  }
-  return id
-
-}
 //  Ejercicio 11 de replit
+ let age = [
+      { name: 'Daniela', age: 25 },
+      { name: 'Andrea', age: 27 },
+      { name: 'José', age: 27 },
+      { name: 'Georg', age: 27 },
+    ];
+ 
+function findMostCommonAge(students) {
+      let obj = {}
+      let edadRepetida = 0
+      let vecesRepetida = 0
 
- let studentsByScore = [
-  { name: 'Georg', email: 'georg@academlo.com', score: 100 },
-  { name: 'Andrea', email: 'andrea@gmail.com', score: 70 },
-  { name: 'Andrés', email: 'andres@gmail.com', score: 34 }
-]
+      for (let i = 0; i < students.length; i++) {
+        const e = students[i].age
+        if (obj[e]) {
+          obj[e]++
+        }else{
+          obj[e] = 1
+        }
+      } 
+      for (const key in obj) {
+        if (obj[key] > vecesRepetida)  {
+          vecesRepetida = obj[key]
+          edadRepetida = key
+        }
+      } return Number(edadRepetida)
+    }   
 
-function orderStudentsByScore(students) {
-  return students.sort((a,b) => a.score - b.score)
-}
-
-console.log(orderStudentsByScore(studentsByScore));
-
+console.log(findMostCommonAge(age));
 
 // ejercicio 12 Replit
 const users = [
@@ -224,7 +233,7 @@ function countLetter(phrase, letter) {
   } return contador
 
 }
-console.log( countLetter("Hola, me llamo Erik", "a"));
+
 
 // ejercicio 17 de replit
 
@@ -236,16 +245,17 @@ let channel1 = [
 ];
 
 function countApplicationsByChannel(students) {
-  let contador = 0
-  let contador1 = 0
-  
-    for (i = 0; i < students.length; i++) {
-      if (students[i].application !== null ) {
-        if(students[i].channel == "youtube"){contador++}
-        if(students[i].channel == "twitter"){contador1++}
+ let objVacio = {}
+ let arrayNew = students.filter( a => a.application != null) 
+
+    for (i = 0; i < arrayNew.length; i++) {
+      let users = arrayNew[i]
+      if (objVacio[users.channel]) {
+        objVacio[users.channel]++
+      }else{
+        objVacio[users.channel] = 1
       }
-    } return{
-      youtube:`${contador}`,twitter: `${contador1}` }
+    } return objVacio
   
 }
 console.log(countApplicationsByChannel(channel1));
@@ -256,6 +266,20 @@ function countNumbers(number) {
   let separado = String(number).length
   return separado
 }
+
+
+
+// ejercicios de Platzi
+
+// Pide la edad y si es mayor de 18 años indica que ya puede conducir.
+function agee(number, name){
+ if (number >= 18) {
+  return ` Hola ${name} ya puedes conducir`
+ }else{
+  return ` Hola ${name} no puedes conducir`
+ }
+}
+
 
 
 
