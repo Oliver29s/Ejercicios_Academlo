@@ -280,6 +280,34 @@ function agee(number, name){
  }
 }
 
+//Pide una nota (número). Muestra la calificación según la nota:
+
+function note(number){
+  switch (number) {
+    case 0:
+    case 1:
+    case 2:  
+    return 'muy indeficiente';
+    break;
+    case 3:
+    case 4:
+    
+    return 'insuficiente';
+    break;
+    case 5:
+    case 6:
+    case 7:
+    return 'bien'   
+    break; 
+    case 8:
+    case 9:
+    case 10:
+      return ' Excelente'
+      break
+    default:
+      break;
+  }
+}
 
 
 
