@@ -310,6 +310,41 @@ function note(number){
 }
 
 
+// ejercicios vacaciones
+
+function wordInTheMiddle(phrase) {
+   let mitad1 = phrase.split(' ')
+  let mitad2 = mitad1[Math.floor(mitad1.length / 2)]
+  let mitad3 = mitad2 - 1
+  let mitad4 = mitad2 + mitad3
+  if (mitad2 % 2 == 0) {
+    return mitad2
+  }else{
+    return mitad4
+  }
+}
 
 
+// ejercicio 2
 
+function firstLetterOfEachWord(str) {
+  let strLength = str.split(' ')
+  let strVacio = ''
+  for (let i = 0; i < strLength.length; i++) {
+
+    strVacio += strLength[i][0]
+  }
+  return strVacio
+}
+
+console.log(firstLetterOfEachWord('hola soy oliver'));
+
+
+// ejercicio 4 
+
+function firtsLetterLower(str) {
+  let str1 = str.split(" ")
+ return str1.map(p => p[0].toLowerCase() + p.slice(1)).join(' ')
+}
+
+console.log(firtsLetterLower('PROFE UNA PREGUNTA, QUE ES NOTION?'));
