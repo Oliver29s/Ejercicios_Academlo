@@ -52,4 +52,7 @@ let users =[
 ]
 
 let correos =[users[0].email,users[1].email,users[2].email,users[3].email,users[4].email,]
-console.log(correos)
+
+// ejercicios vacaiones 
+
+
