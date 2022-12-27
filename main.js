@@ -347,4 +347,17 @@ function firtsLetterLower(str) {
  return str1.map(p => p[0].toLowerCase() + p.slice(1)).join(' ')
 }
 
-console.log(firtsLetterLower('PROFE UNA PREGUNTA, QUE ES NOTION?'));
+//ejercicio
+
+function wordInTheMiddle(phrase) {
+    let phraseOne = phrase.split(" ")
+    let phraseNum =  Math.floor(phraseOne.length / 2)
+    let phraseNum2 =  phraseNum - 1
+    if(phraseNum === 4){return  phraseOne[phraseNum2] + " " + phraseOne[phraseNum] }
+    if (phraseNum  === 1) {return phraseOne[phraseNum] }
+    if (phraseNum % 2 === 0) {return phraseOne[phraseNum] }
+    if(phraseNum % 2 !== 0){return  phraseOne[phraseNum2] + " " + phraseOne[phraseNum] }
+    
+}
+
+console.log(wordInTheMiddle('este ejercicio esta muy facil para el profe'));
