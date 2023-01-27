@@ -360,4 +360,3 @@ function wordInTheMiddle(phrase) {
     
 }
 
-console.log(wordInTheMiddle('este ejercicio esta muy facil para el profe'));
