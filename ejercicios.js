@@ -53,6 +53,39 @@ let users =[
 
 let correos =[users[0].email,users[1].email,users[2].email,users[3].email,users[4].email,]
 
-// ejercicios vacaiones 
 
 
+for (let i = 1; i <= 15; i++) {
+    if ( i % 3 === 0 && i % 5 === 0) {console.log('FizzBuzz');}
+    if (i % 3 === 0) {console.log('Fizz');}
+    if (i % 5 === 0){console.log('Buzz');}
+}
+
+
+const store = () => {
+  // code here
+  let vacioArray =[]
+  return {
+    addProduct(product) {
+      // code here
+       vacioArray.push(product)
+    },
+    removeProduct(product) {
+      // code here
+     let  vacio = vacioArray.find( item => item !== product )
+     vacioArray = vacio
+    },
+    listProducts() {
+      // code here
+      return vacioArray
+    }
+  }
+}
+
+const myStore = store();
+
+myStore.addProduct("phones");
+myStore.addProduct("cereal");
+myStore.removeProduct("phones");
+myStore.addProduct("flour");
+console.log(myStore.listProducts());
