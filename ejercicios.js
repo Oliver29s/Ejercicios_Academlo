@@ -8,7 +8,6 @@ let ciudad = "Soledad-Colombia"
 
 let arrayNumeros = [1, 2, 3]
 let suma = arrayNumeros[0] + arrayNumeros[1] + arrayNumeros[2] 
-console.log(suma)
 
 
 // ejercicio 3. creando un objeto.
@@ -18,7 +17,7 @@ let user ={
     edad: 22,
 }
 let nombreCompleto = user.nombre + user.apellido 
-console.log(nombreCompleto)
+
 
 // ejercicio4. obteniendo correos de usuarios.
 let users =[
@@ -55,11 +54,11 @@ let correos =[users[0].email,users[1].email,users[2].email,users[3].email,users[
 
 
 
-for (let i = 1; i <= 15; i++) {
-    if ( i % 3 === 0 && i % 5 === 0) {console.log('FizzBuzz');}
-    if (i % 3 === 0) {console.log('Fizz');}
-    if (i % 5 === 0){console.log('Buzz');}
-}
+// for (let i = 1; i <= 15; i++) {
+//     if ( i % 3 === 0 && i % 5 === 0) {console.log('FizzBuzz');}
+//     if (i % 3 === 0) {console.log('Fizz');}
+//     if (i % 5 === 0){console.log('Buzz');}
+// }
 
 
 const store = () => {
@@ -73,7 +72,7 @@ const store = () => {
     removeProduct(product) {
       // code here
      let  vacio = vacioArray.find( item => item !== product )
-     vacioArray = vacio
+     vacioArray = [vacio]
     },
     listProducts() {
       // code here
@@ -82,10 +81,46 @@ const store = () => {
   }
 }
 
-const myStore = store();
+let  products = [
+  {
+    id: 1,
+    image:'src/imagen/featured1.png',
+    name: "Hoddies",
+    category: "Hoddies",
+    price: 14.00,
+    stock: 10,
+  },
+  {
+    id: 2,
+    image: "src/imagen/featured3.png",
+    name: "Shirts",
+    category: "Shirts",
+    price: 24.00,
+    stock: 15,
+  },
+  {
+    id: 3,
+    image: 'src/imagen/home.png',
+    name: "Sweatshirts",
+    category: "Sweatshirts",
+    stock: 20,
+    price: 24.00,
+  },
+];
 
-myStore.addProduct("phones");
-myStore.addProduct("cereal");
-myStore.removeProduct("phones");
-myStore.addProduct("flour");
-console.log(myStore.listProducts());
+
+
+
+
+const getUsersData = (users,data) => {
+  let vacio = []
+  for (const i in users) {
+    vacio.push(users[i][data])
+  }
+ 
+    return vacio
+  
+}
+
+console.log(getUsersData(products,'name'))
+
