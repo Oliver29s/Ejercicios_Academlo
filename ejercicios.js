@@ -113,14 +113,9 @@ let  products = [
 
 
 const getUsersData = (users,data) => {
-  let vacio = []
-  for (const i in users) {
-    vacio.push(users[i][data])
-  }
- 
-    return vacio
-  
+ let newArray = users.map( user => user[data] )
+  return newArray
 }
 
-console.log(getUsersData(products,'name'))
+console.log(getUsersData(products,'image'))
 
