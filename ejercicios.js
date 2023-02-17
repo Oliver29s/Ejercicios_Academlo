@@ -68,11 +68,26 @@ const sumNum = (num) => {
   let multiplos = newArray.reduce((a, b) => a + b);
   return multiplos
 };
-console.log(sumNum(30));
 
 
 
 
+
+
+
+let onee = [10,5,2,3,7,5]
+
+const sumPairs = (numbers,n) =>{
+  for(let i in numbers){
+    for(let j in numbers){
+      if(numbers[i] + (numbers[j] ) === n){
+        return [numbers[i],numbers[j]]
+      }
+    }
+  }
+  return undefined
+}
+console.log(sumPairs(onee,10))
 
 
 
