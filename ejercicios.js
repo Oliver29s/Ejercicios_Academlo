@@ -87,7 +87,24 @@ const sumPairs = (numbers,n) =>{
   }
   return undefined
 }
-console.log(sumPairs(onee,10))
+
+
+
+
+
+
+function expresion (string) {
+  let expresionNormal = ''
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      expresionNormal += ' ' + string[i]
+    }else{
+      expresionNormal += string[i]
+    }
+    
+  }
+}
+expresion('camelCase')
 
 
 
