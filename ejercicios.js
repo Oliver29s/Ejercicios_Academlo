@@ -54,10 +54,6 @@ let correos = [
   users[4].email,
 ];
 
-
-
-
-
 const sumNum = (num) => {
   let newArray = [];
   for (let i = 1; i < num; i++) {
@@ -66,58 +62,69 @@ const sumNum = (num) => {
     }
   }
   let multiplos = newArray.reduce((a, b) => a + b);
-  return multiplos
+  return multiplos;
 };
 
+let onee = [10, 5, 2, 3, 7, 5];
 
-
-
-
-
-
-let onee = [10,5,2,3,7,5]
-
-const sumPairs = (numbers,n) =>{
-  for(let i in numbers){
-    for(let j in numbers){
-      if(numbers[i] + (numbers[j] ) === n){
-        return [numbers[i],numbers[j]]
+const sumPairs = (numbers, n) => {
+  for (let i in numbers) {
+    for (let j in numbers) {
+      if (numbers[i] + numbers[j] === n) {
+        return [numbers[i], numbers[j]];
       }
     }
   }
-  return undefined
-}
+  return undefined;
+};
 
-
-
-
-
-
-function expresion (string) {
-  let expresionNormal = ''
+function expresion(string) {
+  let expresionNormal = "";
   for (let i = 0; i < string.length; i++) {
     if (string[i] === string[i].toUpperCase()) {
-      expresionNormal += ' ' + string[i]
-    }else{
-      expresionNormal += string[i]
+      expresionNormal += " " + string[i];
+    } else {
+      expresionNormal += string[i];
     }
-    
+  }
+
+}
+expresion("camelCase");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function scruble(str1, str2) {
+  let vacio = [];
+  let vacio2 = []
+  for (i = 0; i < str1.length; i++) {
+    vacio.push(str1[i]);
+    for (j = 0; j < str2.length; j++) {
+      vacio2.push(str2[j])
+      if (vacio.length < str2.length) {
+        return false;
+      }
+      if (vacio.length >= str2.length && vacio.includes(vacio2[j])) {
+        return true;
+      }
+    }
   }
 }
-expresion('camelCase')
 
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(scruble("rkqodlw", "world"))
+console.log(scruble("scriptsjava", "javascripts"))
+console.log(scruble("jscripts", "javascript"))
 
 
 
