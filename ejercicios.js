@@ -87,9 +87,25 @@ function expresion(string) {
       expresionNormal += string[i];
     }
   }
-
 }
 expresion("camelCase");
+
+function SantaSleigh(string) {
+ 
+  for (let i = 0; i < string.length; i++) {
+    if(string.length > 3){
+      if (string[0] < string[1] && string[1] > string[2]) {
+        return true;
+      }
+    }
+  }
+  return string;
+}
+
+console.log(SantaSleigh('0,3,2,1'));
+
+
+
 
 
 
@@ -107,11 +123,11 @@ expresion("camelCase");
 
 function scruble(str1, str2) {
   let vacio = [];
-  let vacio2 = []
+  let vacio2 = [];
   for (i = 0; i < str1.length; i++) {
     vacio.push(str1[i]);
     for (j = 0; j < str2.length; j++) {
-      vacio2.push(str2[j])
+      vacio2.push(str2[j]);
       if (vacio.length < str2.length) {
         return false;
       }
@@ -122,21 +138,9 @@ function scruble(str1, str2) {
   }
 }
 
-console.log(scruble("rkqodlw", "world"))
-console.log(scruble("scriptsjava", "javascripts"))
-console.log(scruble("jscripts", "javascript"))
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(scruble("rkqodlw", "world"));
+console.log(scruble("scriptsjava", "javascripts"));
+console.log(scruble("jscripts", "javascript"));
 
 const store = () => {
   // code here
